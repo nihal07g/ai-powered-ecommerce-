@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/load_dataset.py", "use": "@vercel/python" },
+    { "src": "api/trigger_load.py", "use": "@vercel/python" }
+  ],
+  "routes": [{ "src": "/api/load-dataset", "dest": "api/trigger_load.py" }],
+  "buildCommand": "pip install pymongo requests",
+  "github": {
+    "silent": true
+  }
+}
